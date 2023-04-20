@@ -1,0 +1,10 @@
+
+
+<form action="" method="POST">
+    <input type="hidden" name="csrf_token" value = "{{ csrf_token() }}" />
+    <input type="text" class="form-control mt-2" name="name" placeholder="Enter Your Name" value="{{name}}" required>
+    <input type="Text" class="form-control mt-2" name="roll" placeholder="Roll" value="{{roll}}" required>
+    <input type="Text" class="form-control mt-2" name="address" placeholder="Address " value="{{address}}" required>
+    <button type="submit" class="btn btn-primary mt-3">Create User</button>
+
+</form>

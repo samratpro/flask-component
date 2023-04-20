@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    {% for message in get_flashed_messages()  %}
+    <div class="alert alert-warning alert-dismissible fade show mt-5" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+
+    <div class="table-responsive mt-5">
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users_list %}
+                <tr class="">
+                    <td scope="row">{{user.id}}</td>
+                    <td scope="row">{{user.username}}</td>
+                    <td scope="row">{{user.email}}</td>
+                    <td scope="row"><a name="" id="" class="btn btn-primary" href="{{ url_for('user_details', id=user.id)}}" role="button">Details</a></td>
+                    <td scope="row"><a name="" id="" class="btn btn-primary" href="#" role="button">Edit</a></td>
+                    <td scope="row"><a class="btn btn-danger" href="{{ url_for('user_delete', id=user.id)}}" role="button">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+
+
+
+</div>
+
+
+
+{% endblock content %}

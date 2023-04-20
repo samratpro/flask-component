@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+
+    <h1 class="my-3">  User of : {{users_details.username}} data  </h1>
+
+    <ul class="list-group list-group-none">
+        <li class="list-group-item mt-3"> ID :  {{users_details.id}}  </li>
+        <li class="list-group-item">  Username: {{users_details.username}}  </li>
+        <li class="list-group-item">  Email :  {{users_details.email}}   </li>
+        <li class="list-group-item">  Name : {{users_details.name}}   </li>
+        <li class="list-group-item">  Author Bio :  {{users_details.about_author}}   </li>
+        <li class="list-group-item">  Date : {{users_details.date_added}}   </li>
+        <li class="list-group-item">  Profile Picture :  {{users_details.profile_pic}}   </li>
+    </ul>
+
+</div>
+
+
+
+{% endblock content %}

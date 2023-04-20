@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5 w-50">
+
+    <h1> Result For : {{search_text}}</h1>
+    {% if Post_query %}
+        {% for post in Post_query %}
+        
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h4 class="card-title">Name : {{post.name}}</h4>
+                    <p class="card-text"> Address: {{post.address}}</p>
+                    <a class="btn btn-primary" href="{{ url_for('details', id=post.id)}}" role="button">Details</a>
+                </div>
+            </div>
+        
+        {% endfor %}
+    
+    {% else %}
+        
+        <h2 class="mt-5"> No Post data Founded</h2>
+
+    {% endif %}
+
+
+
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

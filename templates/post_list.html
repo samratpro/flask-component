@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    {% for message in get_flashed_messages()  %}
+    <div class="alert alert-warning alert-dismissible fade show mt-5" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+
+    <div class="table-responsive mt-5">
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in post_data %}
+                <tr class="">
+                    <td scope="row">{{post.id}}</td>
+                    <td scope="row">{{post.title}}</td>
+                    <td scope="row"><a name="" id="" class="btn btn-primary" href="{{ url_for('post_details', id=post.id)}}" role="button">Details</a></td>
+                    <td scope="row"><a name="" id="" class="btn btn-success" href="{{ url_for('post_edit', id=post.id)}}" role="button">Edit</a></td>
+                    <td scope="row"><a class="btn btn-danger" href="{{ url_for('post_delete', id=post.id)}}" role="button">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+
+
+
+</div>
+
+
+
+{% endblock content %}

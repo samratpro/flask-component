@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container w-50">
+
+    <h1 class="my-3">  Title : {{posts_details.title}} data  </h1>
+
+    <a name="" id="" class="btn btn-success" href="{{url_for('post_edit', id=posts_details.id)}}" role="button">Edit Post</a>
+    
+    <span class="d-block my-3"> Posted : {{posts_details.created}}</span>
+
+    <article class="my-4 border p-4 border-round">{{posts_details.content}}  </article>
+
+</div>
+
+
+
+{% endblock content %}
